@@ -1,0 +1,79 @@
+version: 2
+
+project_name: fucklinux
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: fucklinux
+    main: .
+    binary: fuck-linux
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+      - arm
+    goarm:
+      - "7"
+    ldflags:
+      - -s -w -X main.version={{.Version}}
+
+archives:
+  - id: fucklinux
+    format: tar.gz
+    name_template: "fucklinux_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+      - TESTING.md
+      - sounds/*
+
+nfpms:
+  - id: fucklinux
+    package_name: fucklinux
+    file_name_template: "fucklinux_{{ .Version }}_{{ .Arch }}"
+    vendor: Sudhir878786
+    homepage: https://github.com/Sudhir878786/fuck-linux
+    maintainer: Sudhir <sudhir878786@github.com>
+    description: |-
+      Linux moans every time you hit it.
+      A mic-powered CLI tool that plays sounds when your laptop is physically struck.
+    license: MIT
+    formats:
+      - deb
+      - rpm
+      - archlinux
+    bindir: /usr/bin
+    contents:
+      - src: sounds/
+        dst: /usr/share/fucklinux/sounds
+        type: tree
+      - src: README.md
+        dst: /usr/share/doc/fucklinux/README.md
+    scripts:
+      postinstall: packaging/postinstall.sh
+    recommends:
+      - alsa-utils
+    dependencies:
+      - libasound2
+
+checksum:
+  name_template: "fucklinux_{{ .Version }}_checksums.txt"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^ci:"
+
+release:
+  github:
+    owner: Sudhir878786
+    name: fuck-linux
+  name_template: "fucklinux v{{.Version}}"

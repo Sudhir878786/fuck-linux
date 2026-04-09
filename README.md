@@ -1,7 +1,17 @@
 # fuck-linux
 
-A Linux CLI tool that reacts to physical hits on a device and plays sounds.  
+**Linux moans every time you hit it.**
+
+A CLI tool that reacts to physical hits on a device and plays sounds.
 Inspired by the macOS [spank](https://github.com/taigrr/spank) project — hardware-agnostic and extensible.
+
+## 🚀 Quick Install
+
+Run this one-liner to install the binary and default sounds:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Sudhir878786/fuck-linux/Sudhir/install.sh | bash
+```
 
 ## Features
 
