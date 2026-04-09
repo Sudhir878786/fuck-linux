@@ -25,7 +25,6 @@ archives:
     name_template: "fucklinux_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     files:
       - README.md
-      - TESTING.md
       - sounds/*
 
 nfpms:
