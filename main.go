@@ -10,9 +10,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/spank-linux/spank/audio"
-	"github.com/spank-linux/spank/detector"
-	"github.com/spank-linux/spank/sensor"
+	"github.com/Sudhir878786/fuck-linux/audio"
+	"github.com/Sudhir878786/fuck-linux/detector"
+	"github.com/Sudhir878786/fuck-linux/sensor"
 	"github.com/spf13/cobra"
 )
 
@@ -31,9 +31,9 @@ var (
 
 func main() {
 	cmd := &cobra.Command{
-		Use:   "spank",
+		Use:   "fuck-linux",
 		Short: "Reacts to physical hits on the device and plays sounds",
-		Long: `spank detects physical impacts via accelerometer, serial, or microphone
+		Long: `fuck-linux detects physical impacts via accelerometer, serial, or microphone
 input and plays audio responses.
 
 Sensor sources:
@@ -136,7 +136,7 @@ func runCmd(cmd *cobra.Command, args []string) error {
 	ctx, cancel := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer cancel()
 
-	fmt.Printf("spank: listening via %s in %s mode (threshold=%.3f, cooldown=%dms)\n",
+	fmt.Printf("fuck-linux: listening via %s in %s mode (threshold=%.3f, cooldown=%dms)\n",
 		s.Name(), flagMode, flagThreshold, flagCooldown)
 	fmt.Println("Press Ctrl+C to quit.")
 
@@ -177,7 +177,7 @@ func runCmd(cmd *cobra.Command, args []string) error {
 
 			go func(f string, a float64) {
 				if err := player.Play(f, a); err != nil {
-					fmt.Fprintf(os.Stderr, "spank: audio error: %v\n", err)
+					fmt.Fprintf(os.Stderr, "fuck-linux: audio error: %v\n", err)
 				}
 			}(file, ev.Amplitude)
 		}

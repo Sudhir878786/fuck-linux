@@ -1,4 +1,4 @@
-module github.com/spank-linux/spank
+module github.com/Sudhir878786/fuck-linux
 
 go 1.25.4
 

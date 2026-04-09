@@ -2,7 +2,7 @@
 // It writes newline-separated X,Y,Z accelerometer values to stdout,
 // with periodic synthetic "slap" spikes.
 //
-// Usage: go run examples/sim_serial.go | spank --source serial --device /dev/stdin --sound-dir sounds/
+// Usage: go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/
 package main
 
 import (
