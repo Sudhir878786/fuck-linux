@@ -1,7 +1,7 @@
-# spank (Linux)
+# fuck-linux
 
 A Linux CLI tool that reacts to physical hits on a device and plays sounds.  
-Ported from the macOS [spank](https://github.com/taigrr/spank) project — hardware-agnostic and extensible.
+Inspired by the macOS [spank](https://github.com/taigrr/spank) project — hardware-agnostic and extensible.
 
 ## Features
 
@@ -18,7 +18,7 @@ Ported from the macOS [spank](https://github.com/taigrr/spank) project — hardw
 ## Project Structure
 
 ```
-spank/
+fuck-linux/
 ├── main.go              # CLI entry point (cobra)
 ├── sensor/
 │   ├── sensor.go        # Sensor interface
@@ -53,9 +53,9 @@ sudo apt install libasound2-dev
 ## Build
 
 ```bash
-cd spank
+cd fuck-linux
 go mod tidy
-go build -o spank .
+go build -o fuck-linux .
 ```
 
 ## Generate Test Sounds
@@ -70,10 +70,18 @@ This creates 10 beep WAV files at increasing frequencies in `sounds/`.
 
 ## Usage
 
+### With microphone (recommended for most laptops)
+
+```bash
+./fuck-linux --source mic --sound-dir sounds/ --mode random --threshold 0.4
+```
+
+Now **hit or slap your laptop** — the mic detects the impact and plays a sound!
+
 ### With IIO accelerometer (e.g., laptop with built-in sensor)
 
 ```bash
-sudo ./spank --source iio --sound-dir sounds/ --mode random
+sudo ./fuck-linux --source iio --sound-dir sounds/ --mode random
 ```
 
 ### With Arduino over serial
@@ -83,13 +91,7 @@ sudo ./spank --source iio --sound-dir sounds/ --mode random
 3. Run:
 
 ```bash
-./spank --source serial --device /dev/ttyUSB0 --sound-dir sounds/ --mode escalation
-```
-
-### With microphone
-
-```bash
-./spank --source mic --sound-dir sounds/ --mode random --threshold 0.3
+./fuck-linux --source serial --device /dev/ttyUSB0 --sound-dir sounds/ --mode escalation
 ```
 
 ### Simulated testing (no hardware needed)
@@ -99,7 +101,7 @@ sudo ./spank --source iio --sound-dir sounds/ --mode random
 go run tools/generate_sounds.go sounds/ 10
 
 # Terminal 2: run with simulated serial input
-go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --sound-dir sounds/
+go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/
 ```
 
 ## CLI Flags

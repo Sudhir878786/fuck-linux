@@ -1,6 +1,6 @@
-# Testing Guide — spank (Linux)
+# Testing Guide — fuck-linux
 
-This guide covers how to build, test, and verify the spank project on a Linux system.
+This guide covers how to build, test, and verify the fuck-linux project on a Linux system.
 
 ---
 
@@ -24,15 +24,15 @@ go version
 ## 2. Build
 
 ```bash
-cd spank
+cd fuck-linux
 go mod tidy
-go build -o spank .
+go build -o fuck-linux .
 ```
 
-You should see a `spank` binary in the current directory:
+You should see a `fuck-linux` binary in the current directory:
 
 ```bash
-ls -lh spank
+ls -lh fuck-linux
 ```
 
 ---
@@ -73,7 +73,7 @@ This runs the detector tests which verify:
 Expected output:
 
 ```
-ok   github.com/spank-linux/spank/detector  0.XXXs
+ok   github.com/Sudhir878786/fuck-linux/detector  0.XXXs
 ```
 
 ---
@@ -82,10 +82,10 @@ ok   github.com/spank-linux/spank/detector  0.XXXs
 
 This is the easiest way to verify the full pipeline works — no accelerometer or microphone needed.
 
-### Terminal 1 — Run spank with simulated serial input
+### Terminal 1 — Run fuck-linux with simulated serial input
 
 ```bash
-go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --sound-dir sounds/ --mode random
+go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/ --mode random
 ```
 
 ### What to expect
@@ -95,7 +95,7 @@ go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --so
 - You should see output like:
 
 ```
-spank: listening via serial:/dev/stdin in random mode (threshold=0.050, cooldown=750ms)
+fuck-linux: listening via serial:/dev/stdin in random mode (threshold=0.050, cooldown=750ms)
 Press Ctrl+C to quit.
 slap #1 [medium amp=0.23450] -> hit_07.wav
 slap #2 [hard amp=0.61200] -> hit_03.wav
@@ -116,8 +116,8 @@ If your Linux machine has a built-in or USB microphone:
 # Verify mic works
 arecord -d 2 -f S16_LE -r 44100 -c 1 /tmp/test.wav && aplay /tmp/test.wav
 
-# Run spank in mic mode
-./spank --source mic --sound-dir sounds/ --mode random --threshold 0.3
+# Run fuck-linux in mic mode
+./fuck-linux --source mic --sound-dir sounds/ --mode random --threshold 0.3
 ```
 
 Now **physically hit or slap the surface** near the microphone. Each impact should trigger a sound.
@@ -134,7 +134,7 @@ Now **physically hit or slap the surface** near the microphone. Each impact shou
 Adjust with `--threshold`:
 
 ```bash
-./spank --source mic --sound-dir sounds/ --threshold 0.2
+./fuck-linux --source mic --sound-dir sounds/ --threshold 0.2
 ```
 
 ---
@@ -150,7 +150,7 @@ ls /sys/bus/iio/devices/*/in_accel_x_raw 2>/dev/null
 If a path is printed, you have one. Run:
 
 ```bash
-sudo ./spank --source iio --sound-dir sounds/ --mode escalation
+sudo ./fuck-linux --source iio --sound-dir sounds/ --mode escalation
 ```
 
 (`sudo` is often required for IIO device access.)
@@ -172,7 +172,7 @@ ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
 4. Run:
 
 ```bash
-./spank --source serial --device /dev/ttyUSB0 --sound-dir sounds/ --mode escalation
+./fuck-linux --source serial --device /dev/ttyUSB0 --sound-dir sounds/ --mode escalation
 ```
 
 5. Tap or hit the accelerometer — sounds play on impact.
@@ -184,7 +184,7 @@ ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
 Escalation mode increases sound intensity when you hit rapidly:
 
 ```bash
-go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --sound-dir sounds/ --mode escalation
+go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/ --mode escalation
 ```
 
 In escalation mode:
@@ -197,7 +197,7 @@ In escalation mode:
 ## 10. Test Volume Scaling
 
 ```bash
-go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --sound-dir sounds/ --volume-scaling
+go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/ --volume-scaling
 ```
 
 Harder hits play louder, softer hits play quieter.
@@ -208,10 +208,10 @@ Harder hits play louder, softer hits play quieter.
 
 ```bash
 # 1.5x playback speed
-go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --sound-dir sounds/ --speed 1.5
+go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/ --speed 1.5
 
 # Half speed
-go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --sound-dir sounds/ --speed 0.5
+go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/ --speed 0.5
 ```
 
 ---
@@ -219,7 +219,7 @@ go run examples/sim_serial.go | ./spank --source serial --device /dev/stdin --so
 ## 12. All CLI Flags Reference
 
 ```bash
-./spank --help
+./fuck-linux --help
 ```
 
 | Flag | Default | Description |
