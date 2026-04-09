@@ -47,37 +47,6 @@ fuck-linux/
 └── README.md
 ```
 
-## Prerequisites
-
-```bash
-# Go 1.21+
-go version
-
-# For mic mode: ALSA utilities
-sudo apt install alsa-utils
-
-# For audio playback: ALSA dev libraries
-sudo apt install libasound2-dev
-```
-
-## Build
-
-```bash
-cd fuck-linux
-go mod tidy
-go build -o fuck-linux .
-```
-
-## Generate Test Sounds
-
-Since this repo doesn't include audio assets, generate test WAV files:
-
-```bash
-go run tools/generate_sounds.go sounds/ 10
-```
-
-This creates 10 beep WAV files at increasing frequencies in `sounds/`.
-
 ## Usage
 
 ### With microphone (recommended for most laptops)
@@ -104,15 +73,7 @@ sudo ./fuck-linux --source iio --sound-dir sounds/ --mode random
 ./fuck-linux --source serial --device /dev/ttyUSB0 --sound-dir sounds/ --mode escalation
 ```
 
-### Simulated testing (no hardware needed)
 
-```bash
-# Terminal 1: generate test sounds
-go run tools/generate_sounds.go sounds/ 10
-
-# Terminal 2: run with simulated serial input
-go run examples/sim_serial.go | ./fuck-linux --source serial --device /dev/stdin --sound-dir sounds/
-```
 
 ## CLI Flags
 
