@@ -11,7 +11,7 @@ DOCDIR     = /usr/share/doc/$(PACKAGE)
 all: build
 
 build:
-	CGO_ENABLED=0 go build -ldflags="-s -w -X main.version=$(VERSION)" -o $(BINARY) .
+	go build -ldflags="-s -w -X main.version=$(VERSION)" -o $(BINARY) .
 
 install: build
 	install -Dm755 $(BINARY) $(DESTDIR)$(BINDIR)/$(BINARY)
