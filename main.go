@@ -44,15 +44,15 @@ Sensor sources:
 Modes:
   random     - Play a random sound on each hit
   escalation - Sounds intensify the more you hit within a time window`,
-		Version: version,
-		RunE:    runCmd,
+		Version:      version,
+		RunE:         runCmd,
 		SilenceUsage: true,
 	}
 
 	cmd.Flags().StringVar(&flagMode, "mode", "random", "Playback mode: random or escalation")
-	cmd.Flags().Float64Var(&flagThreshold, "threshold", 0.05, "Minimum amplitude to trigger (0.0-1.0)")
+	cmd.Flags().Float64Var(&flagThreshold, "threshold", 0.4, "Minimum amplitude to trigger (0.0-1.0)")
 	cmd.Flags().IntVar(&flagCooldown, "cooldown", 750, "Cooldown between triggers in milliseconds")
-	cmd.Flags().StringVar(&flagSource, "source", "iio", "Sensor source: iio, serial, or mic")
+	cmd.Flags().StringVar(&flagSource, "source", "mic", "Sensor source: iio, serial, or mic")
 	cmd.Flags().StringVar(&flagDevice, "device", "", "Device path or port (auto-detected if empty)")
 	cmd.Flags().StringVar(&flagSoundDir, "sound-dir", "", "Directory containing audio files (MP3/WAV)")
 	cmd.Flags().Float64Var(&flagSpeed, "speed", 1.0, "Playback speed multiplier")
@@ -88,7 +88,13 @@ func runCmd(cmd *cobra.Command, args []string) error {
 
 	// Resolve sound pack
 	if flagSoundDir == "" {
-		return fmt.Errorf("--sound-dir is required: path to a directory of MP3/WAV files")
+		if _, err := os.Stat("sounds"); err == nil {
+			flagSoundDir = "sounds"
+		} else if _, err := os.Stat("/usr/share/fucklinux/sounds"); err == nil {
+			flagSoundDir = "/usr/share/fucklinux/sounds"
+		} else {
+			return fmt.Errorf("--sound-dir is required (tried 'sounds' and '/usr/share/fucklinux/sounds')")
+		}
 	}
 
 	absDir, err := filepath.Abs(flagSoundDir)
@@ -183,5 +189,3 @@ func runCmd(cmd *cobra.Command, args []string) error {
 		}
 	}
 }
-
-

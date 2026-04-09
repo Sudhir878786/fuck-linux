@@ -52,7 +52,7 @@ fuck-linux/
 ### With microphone (recommended for most laptops)
 
 ```bash
-./fuck-linux --source mic --sound-dir sounds/ --mode random --threshold 0.4
+fuck-linux
 ```
 
 Now **hit or slap your laptop** — the mic detects the impact and plays a sound!

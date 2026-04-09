@@ -20,7 +20,7 @@ install: build
 	install -Dm644 README.md $(DESTDIR)$(DOCDIR)/README.md
 	@echo ""
 	@echo "✅ fucklinux installed!"
-	@echo "   Run: $(BINARY) --source mic --sound-dir $(SOUNDDIR) --threshold 0.4"
+	@echo "   Run: $(BINARY)"
 	@echo ""
 
 uninstall:
