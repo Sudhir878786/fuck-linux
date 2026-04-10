@@ -1,0 +1,147 @@
+backstage_directories: !!set {}
+backstage_files: !!set {}
+directories: !!set
+  bin: null
+  sounds: null
+  usr: null
+  usr/lib: null
+  usr/lib/x86_64-linux-gnu: null
+  usr/lib/x86_64-linux-gnu/oss4-libsalsa: null
+  usr/share: null
+  usr/share/doc: null
+  usr/share/doc/liboss4-salsa-asound2: null
+  usr/share/doc/liboss4-salsa2: null
+files: !!set
+  bin/examples: null
+  bin/fuck-linux: null
+  bin/tools: null
+  sounds/00.mp3: null
+  sounds/01.mp3: null
+  sounds/02.mp3: null
+  sounds/03.mp3: null
+  sounds/04.mp3: null
+  sounds/05.mp3: null
+  sounds/06.mp3: null
+  sounds/07.mp3: null
+  sounds/08.mp3: null
+  sounds/09.mp3: null
+  sounds/10.mp3: null
+  sounds/11.mp3: null
+  sounds/12.mp3: null
+  sounds/13.mp3: null
+  sounds/14.mp3: null
+  sounds/15.mp3: null
+  sounds/16.mp3: null
+  sounds/17.mp3: null
+  sounds/18.mp3: null
+  sounds/19.mp3: null
+  sounds/20.mp3: null
+  sounds/21.mp3: null
+  sounds/22.mp3: null
+  sounds/23.mp3: null
+  sounds/24.mp3: null
+  sounds/25.mp3: null
+  sounds/26.mp3: null
+  sounds/27.mp3: null
+  sounds/28.mp3: null
+  sounds/29.mp3: null
+  sounds/30.mp3: null
+  sounds/31.mp3: null
+  sounds/32.mp3: null
+  sounds/33.mp3: null
+  sounds/34.mp3: null
+  sounds/35.mp3: null
+  sounds/36.mp3: null
+  sounds/37.mp3: null
+  sounds/38.mp3: null
+  sounds/39.mp3: null
+  sounds/40.mp3: null
+  sounds/41.mp3: null
+  sounds/42.mp3: null
+  sounds/43.mp3: null
+  sounds/44.mp3: null
+  sounds/45.mp3: null
+  sounds/46.mp3: null
+  sounds/47.mp3: null
+  sounds/48.mp3: null
+  sounds/49.mp3: null
+  sounds/50.mp3: null
+  sounds/51.mp3: null
+  sounds/52.mp3: null
+  sounds/53.mp3: null
+  sounds/54.mp3: null
+  sounds/55.mp3: null
+  sounds/56.mp3: null
+  sounds/57.mp3: null
+  sounds/58.mp3: null
+  sounds/59.mp3: null
+  usr/lib/x86_64-linux-gnu/libasound.so.2: null
+  usr/lib/x86_64-linux-gnu/liboss4-salsa.so.2: null
+  usr/lib/x86_64-linux-gnu/liboss4-salsa.so.2.0.0: null
+  usr/lib/x86_64-linux-gnu/oss4-libsalsa/libOSSlib.so: null
+  usr/share/doc/liboss4-salsa-asound2/changelog.Debian.gz: null
+  usr/share/doc/liboss4-salsa-asound2/copyright: null
+  usr/share/doc/liboss4-salsa2/changelog.Debian.gz: null
+  usr/share/doc/liboss4-salsa2/copyright: null
+overlay_hash: 6554e32fa718d54160d0511b36f81458e4cb2357
+part_properties:
+  after: []
+  build-attributes: []
+  build-environment: []
+  build-packages:
+  - libasound2-dev
+  - pkg-config
+  - gcc
+  - libc6-dev
+  build-snaps: []
+  disable-parallel: false
+  go-buildtags: []
+  go-generate: []
+  organize: {}
+  overlay:
+  - '*'
+  overlay-packages: []
+  overlay-script: null
+  override-build: 'craftctl default
+
+    cp -r sounds $CRAFT_PART_INSTALL/sounds
+
+    '
+  override-prime: null
+  override-pull: null
+  override-stage: null
+  permissions: []
+  plugin: go
+  prime:
+  - '*'
+  source: .
+  source-branch: ''
+  source-channel: null
+  source-checksum: ''
+  source-commit: ''
+  source-depth: 0
+  source-subdir: ''
+  source-submodules: null
+  source-tag: ''
+  source-type: ''
+  stage:
+  - '*'
+  stage-packages:
+  - libasound2
+  stage-snaps: []
+partition: default
+partitions_contents: {}
+project_options:
+  application_name: snapcraft
+  arch_triplet: x86_64-linux-gnu
+  project_vars:
+    grade:
+      part_name: null
+      updated: false
+      value: stable
+    version:
+      part_name: null
+      updated: false
+      value: 1.0.0
+  project_vars_part_name: null
+  target_arch: amd64

@@ -92,8 +92,10 @@ func runCmd(cmd *cobra.Command, args []string) error {
 			flagSoundDir = "sounds"
 		} else if _, err := os.Stat("/usr/share/fucklinux/sounds"); err == nil {
 			flagSoundDir = "/usr/share/fucklinux/sounds"
+		} else if snapDir := os.Getenv("SNAP"); snapDir != "" && func() bool { _, err := os.Stat(filepath.Join(snapDir, "sounds")); return err == nil }() {
+			flagSoundDir = filepath.Join(snapDir, "sounds")
 		} else {
-			return fmt.Errorf("--sound-dir is required (tried 'sounds' and '/usr/share/fucklinux/sounds')")
+			return fmt.Errorf("--sound-dir is required (tried 'sounds', '/usr/share/fucklinux/sounds', and '$SNAP/sounds')")
 		}
 	}
 

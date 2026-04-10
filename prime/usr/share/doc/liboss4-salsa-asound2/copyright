@@ -1,0 +1,161 @@
+This package was debianized by Sebastien NOEL <sebastien@twolife.org> on
+Sun, 13 Jul 2008 18:52:58 +0200.
+
+It was downloaded from http://www.4front-tech.com/developer/sources/stable/gpl/
+
+Copyright:
+
+Files in lib/libsalsa/ have the following copyright:
+    Copyright © 2004 by Hannu Savolainen < hannu@opensound.com>
+
+The file oss/lib/flashsupport.c has the following copyright:
+    Copyright © 2006 Adobe Systems Incorporated.
+
+The file attic/drv/oss_allegro/id.h has copyright:
+    © 1998-1998 ESS Technology, Inc.
+
+The files attic/drv/oss_allegro/{allegro_code.h,kernelbn.inc,kernel.h}
+have copyright:
+    Copyright © 1997-1999, ESS Technology, Inc.
+
+The files in attic/drv/oss_allegro/{hckernel.h,hardware.h,port.h,srcmgr.inc}
+have copyright:
+    Copyright © 1992-2000  Don Kim (don.kim@esstech.com)
+
+The files in setup/Linux/oss/cuckoo/ have copyright:
+    Copyright © 2004 Hannu Savolainen (hannu@voimakentta.net).
+
+The file kernel/drv/oss_ymf7xx/ymf7xx.h has copyright:
+    Copyright © 4Front Technologies 1996-2008.
+    Copyright © 1997  Yamaha Corporation.
+
+The files kernel/drv/oss_sbxfi/{hwaccess.h,20k1reg.h} have copyright:
+    Copyright © Creative Technology, Ltd., 2007.
+
+The files tutorials/sndkit/dsp/{recplay.c,help.c} have copyright:
+    Copyright by Hannu Savolainen 1993-2004
+
+The files include-alsa/alsa/*.h include-alsa/alsa/sound/*.h have copyright:
+
+    Copyright (c)
+    Jaroslav Kysela <perex@suse.cz>
+    Abramo Bagnara <abramo@alsa-project.org>
+    Takashi Iwai <tiwai@suse.de>
+    Uros Bizjak <uros@kss-loka.si>
+    Thomas Charbonnel (thomas@undata.org)
+    Hannu Savolainen < hannu@opensound.com>
+
+Other files have the following copyright:
+    Copyright © 1996-2009 4Front Technologies
+
+License:
+
+The files in lib/libsalsa/ have the following license:
+
+ *   This library is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU Lesser General Public License version 2.1 as
+ *   published by the Free Software Foundation.
+
+This part of the code is not compiled in the binary packages at the moment.
+
+
+The files in setup/Linux/oss/cuckoo/ have the following license:
+
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License.
+
+This part of the code is not used in the packages at the moment.
+
+
+The file oss/lib/flashsupport.c has the following license:
+
+    Adobe Systems Incorporated(r) Source Code License Agreement
+    Copyright(c) 2006 Adobe Systems Incorporated. All rights reserved.
+
+    Please read this Source Code License Agreement carefully before using
+    the source code.
+
+    Adobe Systems Incorporated grants to you a perpetual, worldwide,
+    non-exclusive, no-charge, royalty-free, irrevocable copyright license,
+    to reproduce, prepare derivative works of, publicly display, publicly
+    perform, and distribute this source code and such derivative works in
+    source or object code form without any attribution requirements.
+
+    The name "Adobe Systems Incorporated" must not be used to endorse or
+    promote products derived from the source code without prior written
+    permission.
+
+    You agree to indemnify, hold harmless and defend Adobe Systems
+    Incorporated from and against any loss, damage, claims or lawsuits,
+    including attorney's fees that arise or result from your use or
+    distribution of the source code.
+
+    THIS SOURCE CODE IS PROVIDED "AS IS" AND "WITH ALL FAULTS", WITHOUT ANY
+    TECHNICAL SUPPORT OR ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
+    NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+    FOR A PARTICULAR PURPOSE ARE DISCLAIMED. ALSO, THERE IS NO WARRANTY OF
+    NON-INFRINGEMENT, TITLE OR QUIET ENJOYMENT. IN NO EVENT SHALL MACROMEDIA
+    OR ITS SUPPLIERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOURCE CODE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+    The Sound detection routines, ESD and PulseAudio backends have
+    been writen by Jean-Michel Dault <jmdault@revolutionlinux.com and
+    are Copyright (c) 2006 Revolution Linux inc. All rights reserved.
+    The code is licenced with the same terms as the rest of the Adobe
+    code.
+
+This file is not compiled in the current package.
+
+
+The files tutorials/sndkit/dsp/{recplay.c,help.c} have the following license:
+
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met: 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer. 2.
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+
+This part of the code is not compiled in the binary packages at the moment.
+
+
+The files tutorials/sndkit/softsynth/*.c are released in the public domain.
+
+
+The files include-alsa/alsa/*.h include-alsa/alsa/sound/*.h come from ALSA 1.0.5
+and have the following license:
+
+     This library is free software; you can redistribute it and/or modify
+     it under the terms of the GNU Lesser General Public License as
+     published by the Free Software Foundation; either version 2.1 of
+     the License, or (at your option) any later version.
+
+
+All other files are released under GPL v2 license (no other versions).
+
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public
+License version 2 can be found in
+  /usr/share/common-licenses/GPL-2,
+the text of the GNU General Public License version 2.1 can be found in
+  /usr/share/common-licenses/GPL-2.1

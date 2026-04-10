@@ -1,0 +1,35 @@
+name: fuck-linux
+base: core22
+version: '1.0.0'
+summary: Reacts to physical hits on the device and plays sounds
+description: |
+  fuck-linux detects physical impacts via accelerometer, serial, or microphone
+  input and plays audio responses.
+
+grade: stable
+confinement: strict
+
+apps:
+  fuck-linux:
+    command: bin/fuck-linux
+    plugs:
+      - alsa
+      - audio-playback
+      - audio-record
+      - hardware-observe
+      - joystick
+
+parts:
+  fuck-linux:
+    plugin: go
+    source: .
+    build-packages:
+      - libasound2-dev
+      - pkg-config
+      - gcc
+      - libc6-dev
+    stage-packages:
+      - libasound2
+    override-build: |
+      craftctl default
+      cp -r sounds $CRAFT_PART_INSTALL/sounds

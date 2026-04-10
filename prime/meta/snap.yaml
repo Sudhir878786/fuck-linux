@@ -1,0 +1,23 @@
+name: fuck-linux
+version: 1.0.0
+summary: Reacts to physical hits on the device and plays sounds
+description: |
+  fuck-linux detects physical impacts via accelerometer, serial, or microphone
+  input and plays audio responses.
+architectures:
+- amd64
+base: core22
+apps:
+  fuck-linux:
+    command: bin/fuck-linux
+    plugs:
+    - alsa
+    - audio-playback
+    - audio-record
+    - hardware-observe
+    - joystick
+confinement: strict
+grade: stable
+environment:
+  LD_LIBRARY_PATH: ${SNAP_LIBRARY_PATH}${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}:$SNAP/usr/lib:$SNAP/usr/lib/x86_64-linux-gnu
+  PATH: $SNAP/usr/sbin:$SNAP/usr/bin:$SNAP/sbin:$SNAP/bin:$PATH
