@@ -2,6 +2,11 @@
 
 **Linux moans every time you hit it.**
 
+<div align="center">
+  <video src="demo.mp4" width="100%" controls></video>
+  <p><i>Experience the technical despair in real-time.</i></p>
+</div>
+
 A CLI tool that reacts to physical hits on your device (via microphone or accelerometer) and plays sounds. 
 
 ## 🚀 Installation
