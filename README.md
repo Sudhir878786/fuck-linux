@@ -2,14 +2,6 @@
 
 **Linux moans every time you hit it.**
 
-## 📺 See it in Action
-*Experience the technical despair in real-time.*
-
-<div align="center">
-  <video src="demo.mp4" width="100%" controls></video>
-</div>
-
-
 A CLI tool that reacts to physical hits on your device (via microphone or accelerometer) and plays sounds. 
 
 ## 🚀 Installation
@@ -39,6 +31,9 @@ You can adjust how hard you need to hit your device using the `--threshold` flag
 - **Very sensitive (light taps):** `fuck-linux --threshold 0.1`
 - **Default:** `fuck-linux --threshold 0.4`
 - **Requires a hard hit:** `fuck-linux --threshold 0.8`
+
+
+## 📺 See it in Action https://fuck-linux.vercel.app/
 
 ### All CLI Flags
 
